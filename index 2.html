@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Manuais Rockwell Automation</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #b00;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .tabs {
+      display: flex;
+      background-color: #f1f1f1;
+      border-bottom: 2px solid #b00;
+    }
+    .tab {
+      padding: 14px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #b00;
+    }
+    .tab:hover, .tab.active {
+      background-color: #fff;
+      border-bottom: 2px solid #b00;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .modelo {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #b00;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8em;
+      color: #777;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Manuais Rockwell Automation</h1>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('powerflex')">PowerFlex</div>
+  <div class="tab" onclick="showTab('smc')">SMC-Flex</div>
+  <div class="tab" onclick="showTab('kinetix')">Kinetix</div>
+</div>
+
+<div id="powerflex" class="tab-content active">
+  <h2>Inversores PowerFlex</h2>
+  <div class="modelo"><strong>PowerFlex 4</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/22a-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 4M</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/22f-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 40</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/22b-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 40P</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/22d-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 400</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/22c-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 523</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/520-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 525</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/520-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 527</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/520-in002_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 753</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/750-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>PowerFlex 755</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/750-in002_-pt-p.pdf">Manual</a></div>
+</div>
+
+<div id="smc" class="tab-content">
+  <h2>Soft Starters SMC</h2>
+  <div class="modelo"><strong>SMC-3</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/150-in009_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>SMC Flex</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/150-in010_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>SMC-50</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/150-in011_-pt-p.pdf">Manual</a></div>
+</div>
+
+<div id="kinetix" class="tab-content">
+  <h2>Servo Drives Kinetix</h2>
+  <div class="modelo"><strong>Kinetix 300</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/2097-in001_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>Kinetix 350</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/2097-in005_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>Kinetix 5500</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/2198-in002_-pt-p.pdf">Manual</a></div>
+  <div class="modelo"><strong>Kinetix 5700</strong> – <a href="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/2198-in003_-pt-p.pdf">Manual</a></div>
+</div>
+
+<footer>
+  Página de consulta de manuais da Rockwell Automation - Funciona offline.
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      const target = this.getAttribute('onclick').match(/'(.*?)'/)[1];
+
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      this.classList.add('active');
+      document.getElementById(target).classList.add('active');
+    });
+  });
+});
+</script>
+
+function showTab(tabId) {
+  var tabs = document.querySelectorAll('.tab');
+  var contents = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => tab.classList.remove('active'));
+  contents.forEach(c => c.classList.remove('active'));
+  document.querySelector('#' + tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
