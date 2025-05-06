@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Manuais Rockwell Automation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #a6192e;
+      padding: 20px;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header img {
+      height: 50px;
+      margin-right: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #a6192e;
+      margin-bottom: 10px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px 5px 0 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      background-color: #a6192e;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #831423;
+    }
+    @media (min-width: 600px) {
+      .section-controls {
+        display: flex;
+        align-items: center;
+      }
+      select {
+        flex: 1;
+        margin-right: 10px;
+      }
+      button {
+        width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://www.rockwellautomation.com/etc.clientlibs/rockwellautomation/clientlibs/clientlib-site/resources/images/logo.svg" alt="Rockwell Automation">
+    <h1>Catálogo de Manuais - Inversores e Softstarters</h1>
+  </header>
+
+  <div class="container">
+    <div class="section">
+      <h2>Inversores</h2>
+      <div class="section-controls">
+        <select id="inversores">
+          <option value="">Selecione um modelo</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/22a-um001_-pt-p.pdf">PowerFlex 4</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/22b-um001_-pt-p.pdf">PowerFlex 40</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/20a-um001_-pt-p.pdf">PowerFlex 70</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/520com-um001_-pt-p.pdf">PowerFlex 525</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um001_-pt-p.pdf">PowerFlex 753</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/750com-um001_-pt-p.pdf">PowerFlex 755</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/2080-um005_-pt-p.pdf">PowerFlex 700</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/20g-in001_-pt-p.pdf">PowerFlex 755T</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/20g-in002_-pt-p.pdf">PowerFlex 7000</option>
+        </select>
+        <button onclick="abrirManual('inversores')">Abrir Manual</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Softstarters</h2>
+      <div class="section-controls">
+        <select id="softstarters">
+          <option value="">Selecione um modelo</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/150-um008_-pt-p.pdf">SMC Flex</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/um/150-um009_-pt-p.pdf">SMC-50</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/150-in009_-pt-p.pdf">SMC-3</option>
+          <option value="https://literature.rockwellautomation.com/idc/groups/literature/documents/in/150-in001_-pt-p.pdf">SMC Dialog Plus</option>
+        </select>
+        <button onclick="abrirManual('softstarters')">Abrir Manual</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function abrirManual(selectId) {
+      const select = document.getElementById(selectId);
+      const manualUrl = select.value;
+      if (manualUrl) {
+        window.location.href = manualUrl;
+      } else {
+        alert('Por favor, selecione um modelo.');
+      }
+    }
+  </script>
+</body>
+</html>
